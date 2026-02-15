@@ -152,14 +152,15 @@ button {
 
 /* Header & Nav */
 .header {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(30, 20, 15, 0.95);
+    /* Dark premium brown */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     padding: var(--space-xs) 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav {
@@ -176,11 +177,13 @@ button {
 }
 
 .logo-kio {
-    color: var(--primary-brown);
+    color: #4A3728;
+    /* Deep rich brown */
 }
 
 .logo-amp {
-    color: var(--accent-gold);
+    color: #D4AF37;
+    /* Luminous gold */
     font-family: var(--font-heading);
     font-style: italic;
     font-weight: 400;
@@ -188,7 +191,8 @@ button {
 }
 
 .logo-kiti {
-    color: var(--primary-dark);
+    color: #F9F7F2;
+    /* Cream/White */
 }
 
 .nav-links {
@@ -199,14 +203,15 @@ button {
 .nav-links a {
     font-weight: 600;
     font-size: 0.8rem;
-    color: var(--text-dark);
+    color: rgba(249, 247, 242, 0.8);
+    /* Cream/White for dark bg */
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-family: var(--font-secondary);
 }
 
 .nav-links a:hover {
-    color: var(--primary-brown);
+    color: #D4AF37;
 }
 
 .nav-actions {
@@ -219,12 +224,13 @@ button {
     position: relative;
     padding: 8px;
     border-radius: 50%;
-    color: var(--text-dark);
+    color: #F9F7F2;
+    /* Cream/White for dark bg */
 }
 
 .icon-btn:hover {
-    background-color: var(--bg-cream);
-    color: var(--primary-brown);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #D4AF37;
 }
 
 .cart-count {
