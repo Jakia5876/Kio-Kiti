@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Journal | Kio and Kiti</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Outfit:wght@500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-kio">KIO</span><span class="logo-amp">&</span><span class="logo-kiti">KITI</span>
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="shop.html?category=cats">Cats</a></li>
+                <li><a href="shop.html?category=dogs">Dogs</a></li>
+                <li><a href="shop.html?category=fish">Fish</a></li>
+                <li><a href="index.html#heritage">Heritage</a></li>
+                <li><a href="stories.html">Journal</a></li>
+                <li><a href="concierge.html">Concierge</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="Account" onclick="window.location.href='account.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart" onclick="window.location.href='cart.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                        <path d="M3 6h18" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <div class="journal-header text-center reveal-on-scroll">
+            <span class="badge">Daily Moments</span>
+            <h1 class="hero-title">Heritage <span class="text-gold">Journal</span></h1>
+            <p class="hero-description" style="max-width: 600px; margin: 0 auto;">Sharing stories of elegance,
+                connection, and the daily lives of our finest friends.</p>
+        </div>
+
+        <div class="story-grid" id="story-grid">
+            <!-- Story 1 -->
+            <div class="story-card reveal-on-scroll">
+                <div class="story-video-container">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=800"
+                        alt="Daily Story">
+                    <!-- In a real app, this would be a <video> tag -->
+                </div>
+                <div class="story-content">
+                    <div class="story-contributor">
+                        <span class="contributor-name">John Doe</span>
+                        <span class="member-tag">Verified</span>
+                    </div>
+                    <div class="story-meta">
+                        <span class="story-date">February 15, 2026</span>
+                        <span class="category-badge">Member Spotlight</span>
+                    </div>
+                    <h3 class="story-title">A Morning Reflection</h3>
+                    <p class="story-text">Watching the sunrise with Kio. There's a certain stillness in the early hours
+                        that perfectly matches the grace of a Siamese companion.</p>
+                </div>
+            </div>
+
+            <!-- Story 2 -->
+            <div class="story-card reveal-on-scroll">
+                <div class="story-video-container">
+                    <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&q=80&w=800"
+                        alt="Daily Story">
+                </div>
+                <div class="story-content">
+                    <div class="story-contributor">
+                        <span class="contributor-name">Alexandra Wright</span>
+                        <span class="member-tag">Verified</span>
+                    </div>
+                    <div class="story-meta">
+                        <span class="story-date">February 14, 2026</span>
+                        <span class="category-badge">Heritage Tips</span>
+                    </div>
+                    <h3 class="story-title">Heritage Walk</h3>
+                    <p class="story-text">Exploring the historic district. Our leather collars aren't just for
+                        show—they're built for the long walks and the stories we make along the way.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Upload Modal -->
+    <div class="modal" id="upload-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="section-title">New Journal Entry</h2>
+            <form id="story-form">
+                <div class="file-upload-zone" id="drop-zone">
+                    <p>Click or drag video/photo here</p>
+                    <input type="file" id="file-input" style="display: none;" accept="video/*,image/*">
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="story-title-input" placeholder="e.g. Afternoon at the Park" required>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="story-category-input" required>
+                        <option value="Daily Moment">Daily Moment</option>
+                        <option value="Heritage Tips">Heritage Tips</option>
+                        <option value="Member Spotlight">Member Spotlight</option>
+                        <option value="Product Story">Product Story</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Your Story</label>
+                    <textarea id="story-text-input" rows="4" placeholder="Share the moment..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">Post Entry</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="upload-trigger" title="Add New Story">+</div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-kio">KIO</span><span class="logo-amp">&</span>KITI
+                    </div>
+                    <p>Elevating the life of our finest friends with timeless quality and modern care.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="shop.html?category=cats">Cats</a></li>
+                        <li><a href="shop.html?category=dogs">Dogs</a></li>
+                        <li><a href="shop.html?category=fish">Fish</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>The Brand</h4>
+                    <ul>
+                        <li><a href="index.html#heritage">Heritage</a></li>
+                        <li><a href="stories.html">Journal</a></li>
+                        <li><a href="#">Membership</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="track.html">Track Order</a></li>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Kio & Kiti. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Journal Page Specific Logic
+        const modal = document.getElementById('upload-modal');
+        const trigger = document.querySelector('.upload-trigger');
+        const closeBtn = document.querySelector('.close-modal');
+        const form = document.getElementById('story-form');
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+
+        trigger.addEventListener('click', () => modal.classList.add('active'));
+        closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const title = document.getElementById('story-title-input').value;
+            const text = document.getElementById('story-text-input').value;
+            const category = document.getElementById('story-category-input').value;
+            const date = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+            // Random Unsplash image for demo
+            const imgUrl = "https://images.unsplash.com/photo-1548191265-cc70d3d45ba1?auto=format&fit=crop&q=80&w=800";
+
+            const storyHtml = `
+                <div class="story-card revealed">
+                    <div class="story-video-container">
+                        <img src="${imgUrl}" alt="New Story">
+                    </div>
+                    <div class="story-content">
+                        <div class="story-contributor">
+                            <span class="contributor-name">John Doe (You)</span>
+                            <span class="member-tag">Verified</span>
+                        </div>
+                        <div class="story-meta">
+                            <span class="story-date">${date}</span>
+                            <span class="category-badge">${category}</span>
+                        </div>
+                        <h3 class="story-title">${title}</h3>
+                        <p class="story-text">${text}</p>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('story-grid').insertAdjacentHTML('afterbegin', storyHtml);
+
+            form.reset();
+            modal.classList.remove('active');
+            showToast("Your story has been posted to the Heritage Journal!");
+        });
+    </script>
+</body>
+
+</html>

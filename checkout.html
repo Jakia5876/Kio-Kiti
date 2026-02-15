@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Kio and Kiti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-kio">KIO</span><span class="logo-amp">&</span><span class="logo-kiti">KITI</span>
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="shop.html?category=cats">Cats</a></li>
+                <li><a href="shop.html?category=dogs">Dogs</a></li>
+                <li><a href="shop.html?category=fish">Fish</a></li>
+                <li><a href="index.html#heritage">Heritage</a></li>
+                <li><a href="stories.html">Journal</a></li>
+                <li><a href="concierge.html">Concierge</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="Account" onclick="window.location.href='account.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart" onclick="window.location.href='cart.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                        <path d="M3 6h18" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <div class="checkout-layout">
+            <div class="checkout-form-area">
+                <section class="checkout-step reveal-on-scroll">
+                    <h2>I. Contact Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="017xxxxxxxx" required>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="checkout-step reveal-on-scroll">
+                    <h2>II. Shipping Address</h2>
+                    <div class="form-group">
+                        <label>City</label>
+                        <select required>
+                            <option>Dhaka</option>
+                            <option>Chittagong</option>
+                            <option>Sylhet</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Detailed Address (Area, House, Flat)</label>
+                        <textarea rows="3" placeholder="Flat 4B, House 12, Road 5..."></textarea>
+                    </div>
+                </section>
+
+                <section class="checkout-step reveal-on-scroll">
+                    <h2>III. Payment Method</h2>
+                    <div class="payment-options">
+                        <label class="pay-option active">
+                            <input type="radio" name="payment" checked>
+                            <span>Cash on Delivery (COD)</span>
+                        </label>
+                        <label class="pay-option">
+                            <input type="radio" name="payment">
+                            <span>bKash / Nagad / Rocket</span>
+                        </label>
+                        <label class="pay-option">
+                            <input type="radio" name="payment">
+                            <span>Credit / Debit Card</span>
+                        </label>
+                    </div>
+                </section>
+
+                <button class="btn btn-primary btn-full mt-lg">Place Order</button>
+            </div>
+
+            <aside class="order-preview">
+                <h3>Order Summary</h3>
+                <div id="preview-items" class="preview-list">
+                    <!-- Loaded via JS -->
+                </div>
+                <div class="total-bar">
+                    <div class="total-row">
+                        <span>Items Total</span>
+                        <span id="preview-sub">৳ 0</span>
+                    </div>
+                    <div class="total-row bold">
+                        <span>Grand Total</span>
+                        <span id="preview-total">৳ 120</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        function renderPreview() {
+            const list = document.getElementById('preview-items');
+            const sub = document.getElementById('preview-sub');
+            const total = document.getElementById('preview-total');
+
+            let subtotal = 0;
+            let html = '';
+
+            cart.forEach(item => {
+                const itemPrice = parseInt(item.price.replace(/[৳, ]/g, ''));
+                subtotal += itemPrice * item.quantity;
+                html += `
+                    <div class="preview-item">
+                        <span>${item.name} x ${item.quantity}</span>
+                        <span>৳ ${(itemPrice * item.quantity).toLocaleString()}</span>
+                    </div>
+                `;
+            });
+
+            list.innerHTML = html;
+            sub.textContent = `৳ ${subtotal.toLocaleString()}`;
+            total.textContent = `৳ ${(subtotal + 120).toLocaleString()}`;
+        }
+        document.addEventListener('DOMContentLoaded', renderPreview);
+    </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-kio">KIO</span><span class="logo-amp">&</span>KITI
+                    </div>
+                    <p>Elevating the life of our finest friends with timeless quality and modern care.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="shop.html?category=cats">Cats</a></li>
+                        <li><a href="shop.html?category=dogs">Dogs</a></li>
+                        <li><a href="shop.html?category=fish">Fish</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>The Brand</h4>
+                    <ul>
+                        <li><a href="index.html#heritage">Heritage</a></li>
+                        <li><a href="stories.html">Journal</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="track.html">Track Order</a></li>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Kio & Kiti. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

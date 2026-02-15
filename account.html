@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | Kio and Kiti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-kio">KIO</span><span class="logo-amp">&</span><span class="logo-kiti">KITI</span>
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="shop.html?category=cats">Cats</a></li>
+                <li><a href="shop.html?category=dogs">Dogs</a></li>
+                <li><a href="shop.html?category=fish">Fish</a></li>
+                <li><a href="index.html#heritage">Heritage</a></li>
+                <li><a href="stories.html">Journal</a></li>
+                <li><a href="concierge.html">Concierge</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="Account" onclick="window.location.href='account.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart" onclick="window.location.href='cart.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                        <path d="M3 6h18" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <div class="account-layout">
+            <aside class="account-sidebar">
+                <div class="user-profile-brief">
+                    <div class="avatar-placeholder">JD</div>
+                    <div class="user-info">
+                        <h3>John Doe</h3>
+                        <span class="member-tag">Heritage Member</span>
+                    </div>
+                    <span class="loyalty-badge">Loyalty: 450 pts</span>
+                </div>
+                <nav class="account-nav">
+                    <a href="#orders" class="active">Orders</a>
+                    <a href="#journal">My Journal</a>
+                    <a href="#privileges">Privileges</a>
+                    <a href="#addresses">Addresses</a>
+                    <a href="#points">Loyalty Points</a>
+                    <a href="#settings">Settings</a>
+                    <a href="#" class="logout-link">Logout</a>
+                </nav>
+            </aside>
+
+            <div class="account-main">
+                <section class="account-section">
+                    <h2>Recent Orders</h2>
+                    <div class="order-list">
+                        <div class="order-card">
+                            <div class="order-header">
+                                <span>Order #KK-1029</span>
+                                <span class="status-badge delivered">Delivered</span>
+                            </div>
+                            <div class="order-details">
+                                <p>Date: Feb 12, 2026</p>
+                                <p>Total: ৳ 2,450</p>
+                            </div>
+                            <div class="order-actions">
+                                <button class="btn btn-outline btn-sm">View Details</button>
+                                <button class="btn btn-primary btn-sm">Reorder</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="account-section mt-lg reveal-on-scroll" id="privileges">
+                    <h2>Active Privileges</h2>
+                    <div class="subscription-card">
+                        <div class="sub-header">
+                            <h3>Heritage Collection: Ocean Fish</h3>
+                            <span class="status-badge active">Member Access</span>
+                        </div>
+                        <p>Next delivery: March 05, 2026</p>
+                        <div class="sub-actions mt-md">
+                            <button class="btn btn-outline">Pause</button>
+                            <button class="btn btn-outline">Modify</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="account-section mt-lg reveal-on-scroll" id="journal">
+                    <div class="section-header-flex">
+                        <h2>My Journal Entries</h2>
+                        <a href="stories.html" class="btn btn-primary btn-sm">+ New Post</a>
+                    </div>
+                    <div class="account-story-list">
+                        <div class="account-story-card">
+                            <div class="as-thumb">
+                                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&q=80&w=200"
+                                    alt="Story">
+                            </div>
+                            <div class="as-info">
+                                <h4>A Morning Reflection</h4>
+                                <p>Feb 15, 2026 • Member Spotlight</p>
+                            </div>
+                            <div class="as-actions">
+                                <button class="icon-btn" title="Edit">✎</button>
+                                <button class="icon-btn" title="Delete">✕</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-kio">KIO</span><span class="logo-amp">&</span>KITI
+                    </div>
+                    <p>Elevating the life of our finest friends with timeless quality and modern care.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="shop.html?category=cats">Cats</a></li>
+                        <li><a href="shop.html?category=dogs">Dogs</a></li>
+                        <li><a href="shop.html?category=fish">Fish</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>The Brand</h4>
+                    <ul>
+                        <li><a href="index.html#heritage">Heritage</a></li>
+                        <li><a href="stories.html">Journal</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="track.html">Track Order</a></li>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Kio & Kiti. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

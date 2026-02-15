@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop All | Kio and Kiti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="header">
+        <nav class="container nav">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-kio">KIO</span><span class="logo-amp">&</span><span class="logo-kiti">KITI</span>
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="shop.html?category=cats">Cats</a></li>
+                <li><a href="shop.html?category=dogs">Dogs</a></li>
+                <li><a href="shop.html?category=fish">Fish</a></li>
+                <li><a href="index.html#heritage">Heritage</a></li>
+                <li><a href="stories.html">Journal</a></li>
+                <li><a href="concierge.html">Concierge</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="Account" onclick="window.location.href='account.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart" onclick="window.location.href='cart.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                        <path d="M3 6h18" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <div class="shop-layout">
+            <!-- Sidebar Filters -->
+            <aside class="sidebar">
+                <div class="filter-group">
+                    <h4>Categories</h4>
+                    <ul class="filter-list">
+                        <li><label><input type="checkbox" checked> Food</label></li>
+                        <li><label><input type="checkbox"> Treats</label></li>
+                        <li><label><input type="checkbox"> Toys</label></li>
+                        <li><label><input type="checkbox"> Grooming</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <div class="price-range">
+                        <input type="range" min="0" max="10000" value="5000">
+                        <div class="price-labels">
+                            <span>৳ 0</span>
+                            <span>৳ 10,000+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Brand</h4>
+                    <ul class="filter-list">
+                        <li><label><input type="checkbox"> Royal Canin</label></li>
+                        <li><label><input type="checkbox"> Whiskas</label></li>
+                        <li><label><input type="checkbox"> Kio Essentials</label></li>
+                        <li><label><input type="checkbox"> PurePets</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Age</h4>
+                    <ul class="filter-list">
+                        <li><label><input type="checkbox"> Kitten/Puppy</label></li>
+                        <li><label><input type="checkbox"> Adult</label></li>
+                        <li><label><input type="checkbox"> Senior</label></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Product Grid Area -->
+            <div class="shop-main">
+                <div class="shop-header">
+                    <h1 id="shop-title">All Cat Products</h1>
+                    <div class="shop-controls">
+                        <span class="result-count">Showing 24 matches</span>
+                        <select class="sort-select">
+                            <option>Newest Arrivals</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Best Rating</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="product-grid reveal-on-scroll" id="shop-product-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <a href="product.html?id=1" class="product-link">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&q=80&w=800"
+                                    alt="Ancestral Grain Kibble">
+                                <span class="product-badge">Heritage Selection</span>
+                            </div>
+                        </a>
+                        <div class="product-info">
+                            <span class="product-category">Cats / Nutrition</span>
+                            <h3 class="product-title">Ancestral Grain-Free Kibble</h3>
+                            <div class="product-price">
+                                <span class="price">৳ 1,850</span>
+                            </div>
+                            <button class="add-to-cart-btn" aria-label="Add to cart">+</button>
+                        </div>
+                    </div>
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <a href="product.html?id=2" class="product-link">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&q=80&w=800"
+                                    alt="Leather Collar">
+                            </div>
+                        </a>
+                        <div class="product-info">
+                            <span class="product-category">Dogs / Accessories</span>
+                            <h3 class="product-title">Brass-Plated Leather Collar</h3>
+                            <div class="product-price">
+                                <span class="price">৳ 3,450</span>
+                            </div>
+                            <button class="add-to-cart-btn" aria-label="Add to cart">+</button>
+                        </div>
+                    </div>
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <a href="product.html?id=3" class="product-link">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1535591273668-578f31182c4f?auto=format&fit=crop&q=80&w=800"
+                                    alt="Bio-Active Tonic">
+                            </div>
+                        </a>
+                        <div class="product-info">
+                            <span class="product-category">Fish / Care</span>
+                            <h3 class="product-title">Ocean Mist Bio-Active Tonic</h3>
+                            <div class="product-price">
+                                <span class="price">৳ 950</span>
+                            </div>
+                            <button class="add-to-cart-btn" aria-label="Add to cart">+</button>
+                        </div>
+                    </div>
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <a href="product.html?id=4" class="product-link">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1615774280822-0943969c36f0?auto=format&fit=crop&q=80&w=800"
+                                    alt="Velvet Bed">
+                                <span class="product-badge">New Arrival</span>
+                            </div>
+                        </a>
+                        <div class="product-info">
+                            <span class="product-category">Cats / Lifestyle</span>
+                            <h3 class="product-title">Midnight Velvet Tufted Bed</h3>
+                            <div class="product-price">
+                                <span class="price">৳ 5,800</span>
+                            </div>
+                            <button class="add-to-cart-btn" aria-label="Add to cart">+</button>
+                        </div>
+                    </div>
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <a href="product.html?id=5" class="product-link">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&q=80&w=800"
+                                    alt="Truffle Treats">
+                            </div>
+                        </a>
+                        <div class="product-info">
+                            <span class="product-category">Dogs / Heritage</span>
+                            <h3 class="product-title">Truffle-Infused Venison Bites</h3>
+                            <div class="product-price">
+                                <span class="price">৳ 1,250</span>
+                            </div>
+                            <button class="add-to-cart-btn" aria-label="Add to cart">+</button>
+                        </div>
+                    </div>
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <a href="product.html?id=6" class="product-link">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&q=80&w=800"
+                                    alt="Vintage Flakes">
+                            </div>
+                        </a>
+                        <div class="product-info">
+                            <span class="product-category">Fish / Nutrition</span>
+                            <h3 class="product-title">Sun-Dried Shrimp Flakes</h3>
+                            <div class="product-price">
+                                <span class="price">৳ 620</span>
+                            </div>
+                            <button class="add-to-cart-btn" aria-label="Add to cart">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <button class="active">1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <span>...</span>
+                    <button>12</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-kio">KIO</span><span class="logo-amp">&</span>KITI
+                    </div>
+                    <p>Elevating the life of our finest friends with timeless quality and modern care.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="shop.html?category=cats">Cats</a></li>
+                        <li><a href="shop.html?category=dogs">Dogs</a></li>
+                        <li><a href="shop.html?category=fish">Fish</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>The Brand</h4>
+                    <ul>
+                        <li><a href="index.html#heritage">Heritage</a></li>
+                        <li><a href="stories.html">Journal</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="track.html">Track Order</a></li>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Kio & Kiti. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

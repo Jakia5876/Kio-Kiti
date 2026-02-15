@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found | Kio and Kiti</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Outfit:wght@500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-kio">KIO</span><span class="logo-amp">&</span><span class="logo-kiti">KITI</span>
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="shop.html?category=cats">Cats</a></li>
+                <li><a href="shop.html?category=dogs">Dogs</a></li>
+                <li><a href="shop.html?category=fish">Fish</a></li>
+                <li><a href="index.html#heritage">Heritage</a></li>
+                <li><a href="stories.html">Journal</a></li>
+                <li><a href="concierge.html">Concierge</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                        <path d="M3 6h18" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-content text-center" style="padding: var(--space-xl) 0;">
+        <div class="error-visual" style="margin-bottom: var(--space-lg);">
+            <span
+                style="font-family: var(--font-heading); font-size: 8rem; color: var(--accent-gold); opacity: 0.3;">404</span>
+        </div>
+        <h1 class="hero-title">A Brief <span class="text-gold">Detour</span></h1>
+        <p class="hero-description" style="max-width: 600px; margin: 0 auto var(--space-lg);">It seems the path you've
+            chosen has led away from our collection. Perhaps your companion knows the way back?</p>
+        <div style="display: flex; gap: var(--space-md); justify-content: center;">
+            <a href="index.html" class="btn btn-primary">Return Home</a>
+            <a href="shop.html" class="btn btn-outline">Browse Boutique</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-kio">KIO</span><span class="logo-amp">&</span>KITI
+                    </div>
+                    <p>Elevating the life of our finest friends with timeless quality and modern care.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="shop.html?category=cats">Cats</a></li>
+                        <li><a href="shop.html?category=dogs">Dogs</a></li>
+                        <li><a href="shop.html?category=fish">Fish</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>The Brand</h4>
+                    <ul>
+                        <li><a href="index.html#heritage">Heritage</a></li>
+                        <li><a href="stories.html">Journal</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="track.html">Track Order</a></li>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Kio & Kiti. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

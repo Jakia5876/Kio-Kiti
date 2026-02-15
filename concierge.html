@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concierge Service | Kio and Kiti</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Outfit:wght@500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-kio">KIO</span><span class="logo-amp">&</span><span class="logo-kiti">KITI</span>
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="shop.html?category=cats">Cats</a></li>
+                <li><a href="shop.html?category=dogs">Dogs</a></li>
+                <li><a href="shop.html?category=fish">Fish</a></li>
+                <li><a href="index.html#heritage">Heritage</a></li>
+                <li><a href="stories.html">Journal</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                        <path d="M3 6h18" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="concierge-hero">
+            <div class="container text-center">
+                <span class="badge">Bespoke Pet Care</span>
+                <h1 class="hero-title">High-End <span class="text-gold">Concierge</span></h1>
+                <p class="hero-description" style="max-width: 700px; margin: 0 auto;">Personalized guidance for the
+                    discerning pet owner. Our experts are here to curate the perfect lifestyle for your finest friends.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="concierge-grid">
+                    <!-- Service I -->
+                    <div class="concierge-card reveal-on-scroll">
+                        <div class="concierge-icon">✧</div>
+                        <h3>Nutritional Tailoring</h3>
+                        <p>Receive a bespoke nutrition plan developed by our veterinary experts to suit your pet's
+                            specific breed, age, and heritage needs.</p>
+                    </div>
+                    <!-- Service II -->
+                    <div class="concierge-card reveal-on-scroll">
+                        <div class="concierge-icon">✧</div>
+                        <h3>Artisanal Styling</h3>
+                        <p>Our stylists will help you select the perfect pieces from our Heritage Collection to
+                            complement your home's aesthetic.</p>
+                    </div>
+                    <!-- Service III -->
+                    <div class="concierge-card reveal-on-scroll">
+                        <div class="concierge-icon">✧</div>
+                        <h3>Behavioral Mastery</h3>
+                        <p>Exclusive access to private consultations for refined training and behavioral harmony in your
+                            shared environment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section bg-cream">
+            <div class="container">
+                <div class="concierge-form-layout">
+                    <div class="form-intro">
+                        <h2 class="section-title">Request a <br>Consultation</h2>
+                        <p>Please share a few details about your companion, and one of our concierge experts will reach
+                            out within 24 hours.</p>
+                    </div>
+                    <form class="concierge-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Your Location</label>
+                                <input type="text" placeholder="Gulshan, Dhaka" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Pet's Breed</label>
+                                <input type="text" placeholder="e.g. Siamese Cat" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Primary Need</label>
+                                <select required>
+                                    <option value="">Select a service...</option>
+                                    <option value="nutrition">Nutrition Plan</option>
+                                    <option value="styling">Home Styling</option>
+                                    <option value="training">Premium Training</option>
+                                    <option value="other">General Inquiry</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>How can we assist you today?</label>
+                            <textarea rows="5" placeholder="Tell us about your companion's unique needs..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-kio">KIO</span><span class="logo-amp">&</span>KITI
+                    </div>
+                    <p>Elevating the life of our finest friends with timeless quality and modern care.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="shop.html?category=cats">Cats</a></li>
+                        <li><a href="shop.html?category=dogs">Dogs</a></li>
+                        <li><a href="shop.html?category=fish">Fish</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>The Brand</h4>
+                    <ul>
+                        <li><a href="index.html#heritage">Heritage</a></li>
+                        <li><a href="stories.html">Journal</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="track.html">Track Order</a></li>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Kio & Kiti. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        document.querySelector('.concierge-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            this.reset();
+            showToast("Inquiry submitted. Our concierge will contact you shortly.");
+        });
+    </script>
+</body>
+
+</html>

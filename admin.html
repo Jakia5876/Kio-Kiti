@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Ledger | Kio & Kiti Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Outfit:wght@500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --sidebar-width: 280px;
+        }
+
+        body {
+            background: #FDFBFA;
+            color: var(--primary-dark);
+        }
+
+        .admin-layout {
+            display: grid;
+            grid-template-columns: var(--sidebar-width) 1fr;
+            min-height: 100vh;
+        }
+
+        .admin-sidebar {
+            background: var(--primary-dark);
+            color: #EAE3D9;
+            padding: var(--space-lg) var(--space-md);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .admin-main {
+            padding: var(--space-xl);
+        }
+
+        .sidebar-header {
+            margin-bottom: var(--space-xl);
+            padding-bottom: var(--space-md);
+            border-bottom: 1px solid rgba(234, 227, 217, 0.1);
+        }
+
+        .admin-nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            color: rgba(234, 227, 217, 0.6);
+            border-radius: var(--radius-sm);
+            margin-bottom: 8px;
+            font-family: var(--font-secondary);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .admin-nav a:hover,
+        .admin-nav a.active {
+            background: rgba(234, 227, 217, 0.05);
+            color: #EAE3D9;
+        }
+
+        .admin-nav a.active {
+            color: var(--accent-gold);
+            background: rgba(197, 168, 124, 0.1);
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .kpi-card {
+            background: white;
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            border: 1px solid #F0F0F0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .kpi-label {
+            font-family: var(--font-secondary);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .kpi-trend {
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .trend-up {
+            color: #2D6A4F;
+        }
+
+        .trend-down {
+            color: #A4161A;
+        }
+
+        .admin-section {
+            background: white;
+            padding: var(--space-xl);
+            border-radius: var(--radius-md);
+            border: 1px solid #F0F0F0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .admin-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .admin-table th {
+            text-align: left;
+            padding: 16px;
+            font-family: var(--font-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            border-bottom: 1px solid #F0F0F0;
+        }
+
+        .admin-table td {
+            padding: 18px 16px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #FAFAFA;
+        }
+
+        .status-pill {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-paid {
+            background: #E9F5EE;
+            color: #2D6A4F;
+        }
+
+        .status-pending {
+            background: #FFF7ED;
+            color: #9A3412;
+        }
+
+        @media (max-width: 1024px) {
+            .admin-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-kio" style="color:#EAE3D9">KIO</span><span class="logo-amp"
+                        style="color:var(--accent-gold); font-style:italic; font-family:'Playfair Display'; margin: 0 4px;">&</span><span
+                        class="logo-kiti" style="color:#EAE3D9">KITI</span>
+                </div>
+            </div>
+            <nav class="admin-nav">
+                <a href="#" class="active">✧ Insights</a>
+                <a href="#">✧ Order Books</a>
+                <a href="#">✧ Collections</a>
+                <a href="#">✧ Journal Submissions</a>
+                <a href="#">✧ Concierge Requests</a>
+                <a href="#">✧ Brand Members</a>
+                <a href="#">✧ Settings</a>
+                <a href="index.html" style="margin-top: var(--space-xl); opacity: 0.5;">Return to Store</a>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="section-header" style="margin-bottom: var(--space-xl);">
+                <div>
+                    <span
+                        style="font-family: var(--font-secondary); text-transform: uppercase; font-size: 0.8rem; color: var(--text-muted);">Internal
+                        Ledger</span>
+                    <h1 class="hero-title" style="font-size: 2.5rem; margin-top: 4px;">Executive <span
+                            class="text-gold">Overview</span></h1>
+                </div>
+                <div class="user-profile" style="display:flex; align-items:center; gap:12px;">
+                    <div style="text-align: right;">
+                        <div style="font-weight: 600;">Brand Manager</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Verified Session</div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-label">Revenue Overview</div>
+                    <div class="kpi-value">৳ 145,280</div>
+                    <div class="kpi-trend trend-up">↑ 18.5% Growth</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Bespoke Requests</div>
+                    <div class="kpi-value">14</div>
+                    <div class="kpi-trend">Concierge Pipeline</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">New Members</div>
+                    <div class="kpi-value">86</div>
+                    <div class="kpi-trend trend-up">↑ Heritage Club</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Cart Abandonment</div>
+                    <div class="kpi-value">12%</div>
+                    <div class="kpi-trend trend-down">↓ Premium Retention</div>
+                </div>
+            </div>
+
+            <div class="admin-section">
+                <div class="section-header">
+                    <h2 class="section-title" style="font-size: 1.5rem;">Recent Acquisitions</h2>
+                    <button class="btn btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">Export Ledger</button>
+                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Transaction</th>
+                            <th>Patron</th>
+                            <th>Collection</th>
+                            <th>Valuation</th>
+                            <th>Fulfillment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: 500;">#KK-8921</td>
+                            <td>Eleanor Vance</td>
+                            <td>Heritage Collection</td>
+                            <td>৳ 12,800</td>
+                            <td><span class="status-pill status-paid">Dispatched</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 500;">#KK-8920</td>
+                            <td>Arthur Miller</td>
+                            <td>Artisanal Accessories</td>
+                            <td>৳ 4,500</td>
+                            <td><span class="status-pill status-pending">In Curation</span></td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: 500;">#KK-8919</td>
+                            <td>Isabella Rossi</td>
+                            <td>Nutrition Mastery</td>
+                            <td>৳ 2,150</td>
+                            <td><span class="status-pill status-paid">Dispatched</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

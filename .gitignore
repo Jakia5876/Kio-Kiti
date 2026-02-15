@@ -1,0 +1,14 @@
+# OS junk
+Thumbs.db
+Desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+
+# Dotnet
+LocalServer/bin/
+LocalServer/obj/
+
+# Local server artifacts
+LocalServer/Properties/launchSettings.json

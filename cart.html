@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Kio and Kiti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="container nav">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-kio">KIO</span><span class="logo-amp">&</span><span class="logo-kiti">KITI</span>
+                </a>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="shop.html?category=cats">Cats</a></li>
+                <li><a href="shop.html?category=dogs">Dogs</a></li>
+                <li><a href="shop.html?category=fish">Fish</a></li>
+                <li><a href="index.html#heritage">Heritage</a></li>
+                <li><a href="stories.html">Journal</a></li>
+                <li><a href="concierge.html">Concierge</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="icon-btn" aria-label="Search">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.3-4.3" />
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="Account" onclick="window.location.href='account.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" aria-label="Cart" onclick="window.location.href='cart.html'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                        <path d="M3 6h18" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container page-content">
+        <div class="section-header text-center">
+            <span class="badge">Your Selection</span>
+            <h1 class="section-title">Shopping Cart</h1>
+        </div>
+
+        <div class="cart-layout">
+            <div class="cart-items" id="cart-container">
+                <!-- Cart items will be loaded here via JS -->
+                <div class="cart-empty-message">
+                    <p>Your cart is empty.</p>
+                    <a href="shop.html" class="btn btn-outline">Go Shopping</a>
+                </div>
+            </div>
+
+            <aside class="cart-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-details">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">৳ 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="shipping">৳ 120</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>Total</span>
+                        <span id="total">৳ 120</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-full mt-md" id="checkout-btn">Proceed to Checkout</button>
+                <div class="payment-badges mt-sm">
+                    <span>Available: bKash, Nagad, Card, COD</span>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <!-- Reusable Footer -->
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Specific logic for Cart Page
+        function renderCart() {
+            const container = document.getElementById('cart-container');
+            const subtotalEl = document.getElementById('subtotal');
+            const totalEl = document.getElementById('total');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<div class="cart-empty-message"> <p>Your cart is empty.</p> <a href="shop.html" class="btn btn-outline">Go Shopping</a> </div>';
+                return;
+            }
+
+            let html = '';
+            let subtotal = 0;
+
+            cart.forEach((item, index) => {
+                const itemPrice = parseInt(item.price.replace(/[৳, ]/g, ''));
+                subtotal += itemPrice * item.quantity;
+
+                html += `
+                    <div class="cart-item">
+                        <div class="cart-item-img"></div>
+                        <div class="cart-item-info">
+                            <h4>${item.name}</h4>
+                            <p class="text-muted">Size: ${item.variant}</p>
+                            <div class="quantity-picker-sm">
+                                <button onclick="changeQty(${index}, -1)">-</button>
+                                <span>${item.quantity}</span>
+                                <button onclick="changeQty(${index}, 1)">+</button>
+                            </div>
+                        </div>
+                        <div class="cart-item-price">
+                            <span class="price">৳ ${itemPrice.toLocaleString()}</span>
+                            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+            subtotalEl.textContent = `৳ ${subtotal.toLocaleString()}`;
+            totalEl.textContent = `৳ ${(subtotal + 120).toLocaleString()}`;
+        }
+
+        function changeQty(index, delta) {
+            cart[index].quantity += delta;
+            if (cart[index].quantity < 1) cart[index].quantity = 1;
+            saveCart();
+            renderCart();
+            updateCartUI();
+        }
+
+        function removeItem(index) {
+            cart.splice(index, 1);
+            saveCart();
+            renderCart();
+            updateCartUI();
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-kio">KIO</span><span class="logo-amp">&</span>KITI
+                    </div>
+                    <p>Elevating the life of our finest friends with timeless quality and modern care.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Collections</h4>
+                    <ul>
+                        <li><a href="shop.html?category=cats">Cats</a></li>
+                        <li><a href="shop.html?category=dogs">Dogs</a></li>
+                        <li><a href="shop.html?category=fish">Fish</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>The Brand</h4>
+                    <ul>
+                        <li><a href="index.html#heritage">Heritage</a></li>
+                        <li><a href="stories.html">Journal</a></li>
+                        <li><a href="concierge.html">Concierge</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="track.html">Track Order</a></li>
+                        <li><a href="account.html">My Account</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 Kio & Kiti. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
